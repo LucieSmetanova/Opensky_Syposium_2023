@@ -17,7 +17,7 @@ from constants_EIDW import *
 #months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '12', '12']
 months = ['07']
 
-DATA_DIR = os.path.join('\Data', airport_icao)
+DATA_DIR = os.path.join('PM_datasets', airport_icao)
 DATA_DIR = os.path.join(DATA_DIR, year)
 
 geod = pyproj.Geod(ellps='WGS84')   # to determine runways via azimuth

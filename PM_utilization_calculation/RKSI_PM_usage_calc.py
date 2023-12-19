@@ -12,9 +12,8 @@ month = '12'
 PMsystem = 'NE'
 radius = 0.05
 dat = PMsystem
-DATA_DIR = os.path.join('PM_dat', airport_icao)
-DATA_DIR = os.path.join(DATA_DIR, year)
-DATASET_DATA_DIR = os.path.join(DATA_DIR, "osn_"+airport_icao+"_states_50NM_"+year+"_extracted")
+
+DATASET_DATA_DIR = os.path.join('..', "Outputs")
 filename = "PM_dataset_"+dat+".csv"
 flights1 = pd.read_csv(os.path.join(DATASET_DATA_DIR, filename), sep=' ',
     names = ['flightID', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'altitude', 'velocity', 'beginDate', 'endDate'],

@@ -9,14 +9,15 @@ airport_icao = "EGLC"
 month = '06'
 dat = ''
 
-DATASET_DATA_DIR = 'Path to your directory'
 for week in ['1','2','3','4']:
     DATASET_DATA = DATASET_DATA_DIR
     
     states_df = pd.DataFrame()
     
-    filename = "osn_arrival_"+airport_icao+"_states_50NM_"+year+"_"+month+"_week"+week+".csv"
-    states_df = pd.read_csv(os.path.join(DATASET_DATA, filename), sep=' ',
+    #specify path to your downloaded 
+    filename = 'YOUR FILE NAME'
+    DATASET_DATA_DIR(os.path.join('YOUR PATH', filename))
+    states_df = pd.read_csv(DATASET_DATA_DIR, sep=' ',
         names = ['flightId', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'altitude', 'velocity', 'beginDate', 'endDate'],
         dtype={'flightId':str, 'sequence':int, 'timestamp':int, 'lat':float, 'lon':float, 'rawAltitude':float, 'altitude':float, 'velocity':float, 'beginDate':str, 'endDate':str})
     states_df.set_index(['flightId', 'sequence'], inplace=True)

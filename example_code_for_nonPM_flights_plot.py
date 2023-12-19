@@ -48,7 +48,7 @@ flightsAll = pd.DataFrame()
 radius = 0.05
 count = 0
 for week in ['1','2','3','4']:
-    flights = pd.read_csv('\Data\EGLC\2022\osn_EGLC_states_50NM_2022_filtered_by_altitude\osn_arrival_EGLC_states_50NM_2022_06_week'+week+'.csv', 
+    flights = pd.read_csv('states_dataset.csv', 
     header=None,
     sep=' '
     ) 

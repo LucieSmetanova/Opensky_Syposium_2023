@@ -14,17 +14,17 @@ month = '08'
 dat = 'SW'
 radius = 0.05
 
-DATA_DIR = os.path.join(r'Data', airport_icao)
-DATA_DIR = os.path.join(DATA_DIR, year)
-DATASET_DATA_DIR = os.path.join(DATA_DIR, "osn_"+airport_icao+"_states_50NM_"+year+"_filtered_by_altitude")
 for week in ['1','2','3','4']:
     for rwy in ['_rwy28R','_rwy28L','_rwy10R','_rwy10L']:
-        DATASET_DATA = os.path.join(DATASET_DATA_DIR, "osn_"+airport_icao+"_states_50NM_"+year+"_"+month+"_week"+week+"_by_runways")
+        #specify path to your downloaded 
+        filename = 'YOUR FILE NAME'
+        DATASET_DATA_DIR(os.path.join('YOUR PATH', filename))
+        # add path to runway determined files
         
         states_df = pd.DataFrame()
         
         filename = "osn_"+airport_icao+"_states_50NM_"+year+"_"+month+"_week"+week+rwy+".csv"
-        states_df = pd.read_csv(os.path.join(DATASET_DATA, filename), sep=' ',
+        states_df = pd.read_csv(os.path.join(DATASET_DATA_DIR, filename), sep=' ',
             names = ['flightId', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'altitude', 'velocity', 'beginDate', 'endDate'],
             dtype={'flightId':str, 'sequence':int, 'timestamp':int, 'lat':float, 'lon':float, 'rawAltitude':float, 'altitude':float, 'velocity':float, 'beginDate':str, 'endDate':str})
         states_df.set_index(['flightId', 'sequence'], inplace=True)

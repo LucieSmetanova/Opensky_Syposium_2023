@@ -33,11 +33,8 @@ else:
     elif radius == 0.03:
         file = 'GM416_GM411_rwy01_rad03'
 
-DATA_DIR = os.path.join('PM_dat', airport_icao)
-DATA_DIR = os.path.join(DATA_DIR, year)
-DATASET_DATA_DIR = os.path.join(DATA_DIR, "osn_"+airport_icao+"_states_50NM_"+year+"_filtered_by_altitude")
 filename = "PM_dataset_arrival_50NM_"+file+".csv"
-flights1 = pd.read_csv(os.path.join(DATASET_DATA_DIR, filename), sep=' ',
+flights1 = pd.read_csv(os.path.join('Output', filename), sep=' ',
     names = ['flightId', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'altitude', 'velocity', 'beginDate', 'endDate'],
     dtype={'flightId':str, 'sequence':int, 'timestamp':int, 'lat':float, 'lon':float, 'rawAltitude':float, 'altitude':float, 'velocity':float, 'beginDate':str, 'endDate':str})
 
@@ -196,5 +193,5 @@ if radius == 0.05:
     filename = airport_icao+"_"+PMsystem+"_ARCS.csv"
 elif radius == 0.03:
     filename = airport_icao+"_"+PMsystem+"_ARCS_rad03.csv"
-PM_usage.to_csv(os.path.join(DATASET_DATA_DIR, filename), sep=' ', encoding='utf-8', float_format='%.3f', index = True, header = False)
+PM_usage.to_csv(os.path.join('Output', filename), sep=' ', encoding='utf-8', float_format='%.3f', index = True, header = False)
 

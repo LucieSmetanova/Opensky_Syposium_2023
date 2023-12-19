@@ -22,16 +22,14 @@ rwy17_lon=[5.214486, 5.222092];
 rwy35_lat=[60.282544, 60.304897];
 rwy35_lon=[5.221775, 5.214267];
 
-DATA_DIR = os.path.join("Data", airport_icao)
-DATA_DIR = os.path.join(DATA_DIR, year)
-filename = "osn_"+ airport_icao + "_states_50NM_" + year + '_filtered_by_altitude'
-DATASET_DATA_DIR = os.path.join(DATA_DIR, filename)
 
 states_df = pd.DataFrame()
 
 for week in [1,2,3,4]:
-    filename = "osn_arrival_"+ airport_icao + "_states_50NM_" + year + '_' + month + "_week" + str(week) + ".csv"
-    states_df_1 = pd.read_csv(os.path.join(DATASET_DATA_DIR, filename), sep=' ',
+    #specify path to your downloaded 
+    filename = 'YOUR FILE NAME'
+    DATASET_DATA_DIR(os.path.join('YOUR PATH', filename))
+    states_df_1 = pd.read_csv(DATASET_DATA_DIR, sep=' ',
         names = ['flightId', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'altitude', 'velocity', 'beginDate', 'endDate'],
         dtype={'flightId':str, 'sequence':int, 'timestamp':int, 'lat':float, 'lon':float, 'rawAltitude':float, 'altitude':float, 'velocity':float, 'beginDate':str, 'endDate':str})
 

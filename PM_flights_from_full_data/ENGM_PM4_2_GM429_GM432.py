@@ -30,17 +30,14 @@ rwy01R_lon = [11.107783, 11.122486];
 rwy19L_lat = [60.201208, 60.175756];
 rwy19L_lon = [11.122486, 11.107783];
 
-DATA_DIR = os.path.join("Data", airport_icao)
-DATA_DIR = os.path.join(DATA_DIR, year)
-filename = "osn_"+ airport_icao + "_states_50NM_" + year
-DATASET_DATA_DIR = os.path.join(DATA_DIR, filename)
-
 states_df = pd.DataFrame()
 
 for week in [1,2,3,4]:
     for rwy in ['_rwy19L','_rwy19R']:
-        filename = "osn_"+ airport_icao + "_states_50NM_" + year + "_" + month + "_week" + str(week) + "_by_runways"
-        DATASET_DATA_DIR_rwy = os.path.join(DATASET_DATA_DIR, filename)
+        #specify path to your downloaded 
+        filename = 'YOUR FILE NAME'
+        DATASET_DATA_DIR(os.path.join('YOUR PATH', filename))
+        # add path to runway determined files
         filename = "osn_"+ airport_icao + "_states_50NM_" + year + '_' + month + "_week" + str(week) + rwy +".csv"
         states_df_1 = pd.read_csv(os.path.join(DATASET_DATA_DIR_rwy, filename), sep=' ',
             names = ['flightId', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'altitude', 'velocity', 'beginDate', 'endDate'],

@@ -13,11 +13,13 @@ airport_icao = "SKBO"
 month = '12'
 dat = 'NW2'
 
-DATA_DIR = os.path.join(r'PATH', airport_icao)
-DATA_DIR = os.path.join(DATA_DIR, year)
-DATASET_DATA_DIR = os.path.join(DATA_DIR, "osn_"+airport_icao+"_states_50NM_"+year+"_extracted")
 for week in ['1','2','3','4']:
     for rwy in ['_rwy13L','_rwy13R','_rwy31L','_rwy31R']:
+        #specify path to your downloaded 
+        filename = 'YOUR FILE NAME'
+        DATASET_DATA_DIR(os.path.join('YOUR PATH', filename))
+        # add path to runway determined files
+
         DATASET_DATA = os.path.join(DATASET_DATA_DIR, "osn_"+airport_icao+"_states_50NM_extracted_"+year+"_"+month+"_week"+week+"_by_runways")
         
         states_df = pd.DataFrame()

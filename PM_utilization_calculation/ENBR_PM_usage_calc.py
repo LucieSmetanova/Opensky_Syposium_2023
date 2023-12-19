@@ -23,9 +23,7 @@ elif PMsystem == 'SW':
 else:
     file = 'BR734_BR733_pok2'
 
-DATA_DIR = os.path.join('PM_dat', airport_icao)
-DATA_DIR = os.path.join(DATA_DIR, year)
-DATASET_DATA_DIR = os.path.join(DATA_DIR, "osn_"+airport_icao+"_states_50NM_"+year+"_filtered_by_altitude")
+DATASET_DATA_DIR = os.path.join('..', "Outputs")
 filename = "PM_dataset_arrival_50NM_"+file+".csv"
 flights1 = pd.read_csv(os.path.join(DATASET_DATA_DIR, filename), sep=' ',
     names = ['flightId', 'sequence', 'timestamp', 'lat', 'lon', 'rawAltitude', 'altitude', 'velocity', 'beginDate', 'endDate'],

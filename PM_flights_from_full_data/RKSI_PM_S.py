@@ -14,11 +14,13 @@ month = '12'
 dat = 'S'
 radius = 0.05
 
-DATA_DIR = os.path.join(r'Path', airport_icao)
-DATA_DIR = os.path.join(DATA_DIR, year)
-DATASET_DATA_DIR = os.path.join(DATA_DIR, "osn_"+airport_icao+"_states_50NM_"+year+"_extracted")
 for week in ['1','2','3','4']:
     for rwy in ['_rwy15','_rwy16','_rwy33','_rwy34']:
+        #specify path to your downloaded 
+        filename = 'YOUR FILE NAME'
+        DATASET_DATA_DIR(os.path.join('YOUR PATH', filename))
+        # add path to runway determined files
+
         DATASET_DATA = os.path.join(DATASET_DATA_DIR, "osn_"+airport_icao+"_states_50NM_"+year+"_"+month+"_week"+week+"_by_runways")
         
         states_df = pd.DataFrame()
